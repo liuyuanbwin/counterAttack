@@ -1,0 +1,29 @@
+{
+  "name": "CALeo",
+  "manifest_version":2,
+  "version": "0.0.1",
+  "description": "Keep social Away",
+  "browser_action": {
+    "default_icon": "images/icon16.png" ,
+    "default_title": "CALeo",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "js": ["js/alert.js"],
+      "matches": [
+        "http://*.weibo.com/*",
+        "https://*.weibo.com/*",
+        "http://weibo.com/*",
+        "https://weibo.com/*"
+      ],
+      "run_at":"document_start"
+    }
+  ],
+  "permissions": [
+    "<all_urls>",
+    "tabs",
+    "storage",
+    "unlimitedStorage"
+  ]
+}
